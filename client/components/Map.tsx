@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import * as maptilersdk from '@maptiler/sdk'
 import '@maptiler/sdk/dist/maptiler-sdk.css'
 import { GeocodingControl } from '@maptiler/geocoding-control/react'
@@ -21,15 +21,14 @@ function MapTiler({ setCoordinates, initialCoordinates }: MapTilerProps) {
   maptilersdk.config.apiKey = 'aRttS83mbQ8qdXahgTPf'
 
   useEffect(() => {
-    if (map.current) return // Prevent multiple initializations
+    if (map.current) return
 
-    // Use initialCoordinates if provided, otherwise use default
     const center = initialCoordinates ?? { lat: -38.656, lng: 178.015 }
 
     map.current = new maptilersdk.Map({
       container: mapContainer.current as HTMLElement,
       style: '8eeb818c-c20a-45e2-9e8c-ea10590ce10a',
-      center: [center.lng, center.lat], // MapTiler uses [lng, lat]
+      center: [center.lng, center.lat],
       zoom: zoom,
       terrain: true,
       terrainControl: true,
