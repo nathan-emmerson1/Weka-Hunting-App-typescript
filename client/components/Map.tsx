@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import * as maptilersdk from '@maptiler/sdk'
 import '@maptiler/sdk/dist/maptiler-sdk.css'
-import { GeocodingControl } from '@maptiler/geocoding-control/react'
+
 import { createMapLibreGlMapController } from '@maptiler/geocoding-control/maplibregl-controller'
 import type { MapController } from '@maptiler/geocoding-control/types'
 import '@maptiler/geocoding-control/style.css'
@@ -10,10 +10,14 @@ import { MaplibreLegendControl } from '@watergis/maplibre-gl-legend'
 interface MapTilerProps {
   setCoordinates: (coords: { lat: number; lng: number } | null) => void
   initialCoordinates?: { lat: number; lng: number } | null
+  setMapController: (controller: MapController | null) => void
 }
 
-function MapTiler({ setCoordinates, initialCoordinates }: MapTilerProps) {
-  const [mapController, setMapController] = useState<MapController | null>(null)
+function MapTiler({
+  setCoordinates,
+  setMapController,
+  initialCoordinates,
+}: MapTilerProps) {
   const mapContainer = useRef<HTMLDivElement | null>(null)
   const map = useRef<maptilersdk.Map | null>(null)
   const zoom = 14
@@ -38,7 +42,8 @@ function MapTiler({ setCoordinates, initialCoordinates }: MapTilerProps) {
       maxZoom: 25,
     })
 
-    setMapController(createMapLibreGlMapController(map.current, maptilersdk))
+    const controller = createMapLibreGlMapController(map.current, maptilersdk)
+    setMapController(controller)
 
     map.current.on('load', () => {
       const targets = {
@@ -68,18 +73,10 @@ function MapTiler({ setCoordinates, initialCoordinates }: MapTilerProps) {
         setCoordinates({ lat, lng })
       }
     })
-  }, [initialCoordinates, setCoordinates])
+  }, [initialCoordinates, setCoordinates, setMapController])
 
   return (
     <div className="map-wrap">
-      <div className="geocoding">
-        {mapController && (
-          <GeocodingControl
-            apiKey={maptilersdk.config.apiKey}
-            mapController={mapController}
-          />
-        )}
-      </div>
       <div ref={mapContainer} className="map" />
     </div>
   )

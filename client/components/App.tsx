@@ -2,6 +2,7 @@ import { useState } from 'react'
 import MapTiler from './Map'
 import Nav from './Nav'
 import Windy from './Windy'
+import { MapController } from '@maptiler/geocoding-control/types'
 
 function App() {
   const [showMapTiler, setShowMapTiler] = useState(true)
@@ -9,9 +10,11 @@ function App() {
     lat: number
     lng: number
   } | null>(null)
+  const [mapController, setMapController] = useState<MapController | null>(null)
+
   return (
     <div className="App">
-      <Nav />
+      <Nav mapController={mapController} />
       <button onClick={() => setShowMapTiler(!showMapTiler)}>
         {showMapTiler ? 'Show Windy' : 'Show MapTiler'}
       </button>
@@ -19,6 +22,7 @@ function App() {
         <MapTiler
           setCoordinates={setCoordinates}
           initialCoordinates={coordinates}
+          setMapController={setMapController}
         />
       ) : (
         <Windy coordinates={coordinates} />
