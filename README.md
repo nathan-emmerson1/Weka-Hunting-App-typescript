@@ -1,26 +1,33 @@
-# Phase 1 Boilerplate
+# Weka Hunting Maps
 
-## Packages Included
+**Product Owner:** Evandah
 
-- react
-- react-router-dom
-- @tanstack/react-query
-- vite
-- vitest
-- eslint
+## Overview
 
-## Setup
+Weka Hunting Maps is a dynamic web application designed to assist hunters by providing an interactive map for locating hunting spots and integrating useful tools like Windy for real-time weather updates. The application allows users to search for locations, view detailed hunting spot information, and leverage the Windy app to plan their hunting trips more effectively.
 
-- [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
-  <details style="padding-left: 2em">
-    <summary>Tip</summary>
+## Features
 
-    ```sh
-    npm install
-    npm run dev
-    ```
-  </details>
+- **Interactive Map**: View and navigate a detailed map with location markers for hunting spots.
+- **Search Functionality**: Easily search for specific locations using the integrated Mapbox search feature.
+- **Windy Integration**: Access Windy’s weather data directly within the app to get real-time weather updates and forecasts.
+- **Dynamic Cards**: Display hunting spot information in dynamically generated cards that include images, names, and coordinates.
+- **Responsive Design**: Ensure a seamless user experience across various devices.
 
----
+## Tech Stack
 
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-phase1)
+- **Frontend**: React.js
+- **Backend**: Node.js (for API and server-side functionality)
+- **HTTP Requests**: Axios
+- **Maps and Search**: Mapbox
+- **Weather Data**: Windy API
+- **Styling**: Custom CSS
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/nathan-emmerson1/Weka-Hunting-Maps
