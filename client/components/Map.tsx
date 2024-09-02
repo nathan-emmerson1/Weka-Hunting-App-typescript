@@ -48,6 +48,7 @@ function MapTiler({
       const targets = {
         Contour: 'Contours',
         'Doc recreational hunting permit areas': 'Public Hunting-spots',
+        'gizzy-layer': 'Gisborne Satelite',
 
         Satellite: 'satellite',
       }
@@ -62,6 +63,27 @@ function MapTiler({
         legendControl as unknown as maptilersdk.IControl,
         'top-right'
       )
+    })
+
+    map.current.on('load', () => {
+      console.log('adding layers')
+
+      map.current?.addSource('tms-source', {
+        type: 'raster',
+        tiles: [
+          'https://tiles-cdn.koordinates.com/services;key=74deadc977294b07a253636d74f9c9de/tiles/v4/layer=118823/EPSG:3857/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
+      })
+      map.current?.addLayer({
+        id: 'gizzy-layer',
+        type: 'raster',
+        source: 'tms-source',
+        paint: {},
+        layout: {
+          visibility: 'none',
+        },
+      })
     })
 
     map.current.on('moveend', () => {
