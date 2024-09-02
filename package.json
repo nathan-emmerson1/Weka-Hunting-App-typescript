@@ -21,6 +21,9 @@
   "author": "Dev Academy Aotearoa",
   "license": "ISC",
   "dependencies": {
+    "@maptiler/geocoding-control": "^1.3.3",
+    "@maptiler/sdk": "^2.2.1",
+    "@watergis/maplibre-gl-legend": "^2.0.5",
     "superagent": "^8.1.2"
   },
   "devDependencies": {
