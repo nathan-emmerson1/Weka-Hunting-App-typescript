@@ -16,8 +16,8 @@ code {
 .heading {
   margin: 0;
   padding: 0px;
-  background-color: black;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(8, 8, 8);
   text-align: center;
 }
 
@@ -37,7 +37,7 @@ code {
 .map {
   position: absolute;
   width: 100%;
-  height: 95%;
+  height: 85vh;
 }
 
 .geocoding {
@@ -48,5 +48,36 @@ code {
 
 #windy {
   width: 100%;
-  height: 100vh;
+  height: 86vh;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #000000;
+  z-index: 200;
+  height: 80px;
+}
+
+.navbar-logo img {
+  width: 130px;
+  height: auto;
+}
+
+.navbar-search {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+  border-radius: 20px;
+  border: 10px;
+}
+
+.navbar-buttons {
+  justify-content: right;
+  gap: 10px;
 }
