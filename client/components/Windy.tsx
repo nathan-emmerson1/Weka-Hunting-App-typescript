@@ -1,4 +1,4 @@
-import  { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 declare global {
   interface Window {
@@ -45,6 +45,6 @@ function Windy({ coordinates }: WindyProps) {
     }
   }, [coordinates, windyAPI])
 
-  return <div ref={windyRef} className="windy"></div>
+  return <div ref={windyRef} id="windy"></div>
 }
 export default Windy

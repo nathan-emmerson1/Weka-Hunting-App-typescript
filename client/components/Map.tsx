@@ -1,7 +1,6 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import * as maptilersdk from '@maptiler/sdk'
 import '@maptiler/sdk/dist/maptiler-sdk.css'
-
 import { createMapLibreGlMapController } from '@maptiler/geocoding-control/maplibregl-controller'
 import type { MapController } from '@maptiler/geocoding-control/types'
 import '@maptiler/geocoding-control/style.css'

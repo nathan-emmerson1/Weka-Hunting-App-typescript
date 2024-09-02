@@ -14,10 +14,12 @@ function App() {
 
   return (
     <div className="App">
-      <Nav mapController={mapController} />
-      <button onClick={() => setShowMapTiler(!showMapTiler)}>
-        {showMapTiler ? 'Show Windy' : 'Show MapTiler'}
-      </button>
+      <Nav
+        mapController={mapController}
+        setShowMapTiler={setShowMapTiler}
+        showMapTiler={showMapTiler}
+      />
+
       {showMapTiler ? (
         <MapTiler
           setCoordinates={setCoordinates}

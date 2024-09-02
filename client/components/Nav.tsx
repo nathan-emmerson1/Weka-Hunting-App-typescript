@@ -5,9 +5,11 @@ import logo from '../../images/Logo.png'
 
 interface NavProps {
   mapController: MapController | null
+  setShowMapTiler: (show: boolean) => void
+  showMapTiler: boolean
 }
 
-function Nav({ mapController }: NavProps) {
+function Nav({ mapController, setShowMapTiler, showMapTiler }: NavProps) {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -20,6 +22,11 @@ function Nav({ mapController }: NavProps) {
             mapController={mapController}
           />
         )}
+      </div>
+      <div className="navbar-buttons">
+        <button onClick={() => setShowMapTiler(!showMapTiler)}>
+          {showMapTiler ? 'Show Windy' : 'Show MapTiler'}
+        </button>
       </div>
     </nav>
   )
