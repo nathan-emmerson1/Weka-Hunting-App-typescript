@@ -14,6 +14,8 @@ interface WindyProps {
   coordinates: { lat: number; lng: number } | null
 }
 
+const apiKey = process.env.WINDY_API_KEY
+
 function Windy({ coordinates }: WindyProps) {
   const windyRef = useRef(null)
   const [windyAPI, setWindyAPI] = useState<any>(null)
@@ -21,20 +23,16 @@ function Windy({ coordinates }: WindyProps) {
   useEffect(() => {
     if (!windyRef.current) return
 
-    // Windy API options
     const options = {
-      key: 'KWp1v5jd8qR6BpQwSozw9F2oGVcUmhK6', // REPLACE WITH YOUR KEY !!!
+      key: apiKey,
       verbose: true,
       lat: coordinates?.lat ?? -38.6,
       lon: coordinates?.lng ?? 178.0,
       zoom: 11,
     }
 
-    // Initialize Windy API
     window.windyInit(options, (windyApi) => {
       setWindyAPI(windyApi)
-
-      // Example of using Windy's Leaflet instance
     })
   }, [])
 

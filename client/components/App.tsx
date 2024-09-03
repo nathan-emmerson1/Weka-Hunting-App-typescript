@@ -3,6 +3,7 @@ import MapTiler from './Map'
 import Nav from './Nav'
 import Windy from './Windy'
 import { MapController } from '@maptiler/geocoding-control/types'
+import TimeWidget from './TimeWidget'
 
 function App() {
   const [showMapTiler, setShowMapTiler] = useState(true)
@@ -29,6 +30,9 @@ function App() {
       ) : (
         <Windy coordinates={coordinates} />
       )}
+      <div>
+        <TimeWidget coordinates={coordinates} />
+      </div>
     </div>
   )
 }

@@ -66,8 +66,6 @@ function MapTiler({
     })
 
     map.current.on('load', () => {
-      console.log('adding layers')
-
       map.current?.addSource('tms-source', {
         type: 'raster',
         tiles: [
