@@ -2,6 +2,7 @@ import { GeocodingControl } from '@maptiler/geocoding-control/react'
 import type { MapController } from '@maptiler/geocoding-control/types'
 import '@maptiler/geocoding-control/style.css'
 import logo from '../../images/Logo.png'
+// import '../custom-geocoding-control.css'
 
 interface NavProps {
   mapController: MapController | null

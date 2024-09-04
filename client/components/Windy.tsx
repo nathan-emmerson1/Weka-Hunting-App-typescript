@@ -14,7 +14,7 @@ interface WindyProps {
   coordinates: { lat: number; lng: number } | null
 }
 
-const apiKey = process.env.WINDY_API_KEY
+const apiKey = 'KWp1v5jd8qR6BpQwSozw9F2oGVcUmhK6'
 
 function Windy({ coordinates }: WindyProps) {
   const windyRef = useRef(null)

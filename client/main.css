@@ -34,17 +34,22 @@ code {
   ); /* calculate height of the screen minus the heading */
 }
 
+.map-container {
+  position: relative; /* Required for absolute positioning of child elements */
+  flex: 1;
+}
+
 .map {
   position: absolute;
   width: 100%;
   height: 85vh;
 }
 
-.geocoding {
+/* .geocoding {
   position: absolute;
   top: 10px;
   left: 10px;
-}
+} */
 
 #windy {
   width: 100%;
@@ -68,7 +73,7 @@ code {
   height: auto;
 }
 
-.navbar-search {
+/* .navbar-search {
   flex-grow: 2;
   display: flex;
   justify-content: center;
@@ -80,4 +85,78 @@ code {
 .navbar-buttons {
   justify-content: right;
   gap: 10px;
+}
+
+.custom-geocoding-wrapper {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.custom-geocoding-wrapper .geocoding-control {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-geocoding-wrapper .geocoding-control input {
+  color: #333;
+  border: 2px solid #ccc;
+} */
+
+/* Global CSS file */
+
+/* Styling the entire input group container */
+
+/* timewidget css */
+
+.time-widget-container {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  position: absolute; /* Position absolutely within the map-container */
+  bottom: 16px; /* Distance from the bottom of the map */
+  right: 16px; /* Distance from the right side of the map */
+  z-index: 10; /* Ensure it stays on top of other map elements */
+}
+
+.time-widget-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #0073e6;
+}
+
+.time-widget-temp {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.time-widget-description {
+  font-style: italic;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.time-widget-sun-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.time-widget-sun-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.time-widget-current-time {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: #ff6600;
 }

@@ -21,16 +21,17 @@ function App() {
         showMapTiler={showMapTiler}
       />
 
-      {showMapTiler ? (
-        <MapTiler
-          setCoordinates={setCoordinates}
-          initialCoordinates={coordinates}
-          setMapController={setMapController}
-        />
-      ) : (
-        <Windy coordinates={coordinates} />
-      )}
-      <div>
+      <div className="map-container">
+        {showMapTiler ? (
+          <MapTiler
+            setCoordinates={setCoordinates}
+            initialCoordinates={coordinates}
+            setMapController={setMapController}
+          />
+        ) : (
+          <Windy coordinates={coordinates} />
+        )}
+
         <TimeWidget coordinates={coordinates} />
       </div>
     </div>
