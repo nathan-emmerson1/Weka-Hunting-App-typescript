@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { WeatherData } from '../../models/WeatherData'
-// import getWeatherData from '../apis/TimeWidgetData'
+import getWeatherData from '../apis/TimeWidgetData'
 import { useEffect } from 'react'
 
 interface TimeWidgetProps {
@@ -8,7 +8,7 @@ interface TimeWidgetProps {
 }
 
 function TimeWidget({ coordinates }: TimeWidgetProps) {
-  const { lat, lng } = coordinates ?? { lat: 38.66, lng: 178.01 } // Default to dummy coordinates
+  const { lat, lng } = coordinates ?? { lat: 38.66, lng: 178.01 }
 
   const {
     data: weather,
