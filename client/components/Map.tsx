@@ -84,6 +84,12 @@ function MapTiler({
       })
     })
 
+    map.current.on('click', () => {
+      console.log('map clciked', map.current)
+    })
+
+    console.log(map.current)
+
     map.current.on('moveend', () => {
       const center = map.current?.getCenter()
       if (center) {

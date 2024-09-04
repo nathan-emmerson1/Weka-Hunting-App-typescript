@@ -39,15 +39,10 @@ function TimeWidget({ coordinates }: TimeWidgetProps) {
     return <div>Loading...</div>
   }
 
-  console.log(weather)
-
   return (
     <div className="time-widget-container">
       <h1 className="time-widget-title">Weather in {weather.name}</h1>
-      <p className="time-widget-temp">Temperature: {weather.temp}°C</p>
-      <p className="time-widget-description">
-        Description: {weather.description}
-      </p>
+
       <div className="time-widget-sun-info">
         <p>Sunrise: {weather.sunrise}</p>
         <p>Sunset: {weather.sunset}</p>

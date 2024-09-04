@@ -11,6 +11,7 @@ export default async function getWeatherData(
     const res = await request.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}`
     )
+    //  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API key}`
 
     const weatherData = res.body
 
